@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "CommonJS",
+    "target": "ES2017",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "strict": false,
+    "lib": ["esnext", "DOM"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "typeRoots": [
+      "**/node_modules/@types",
+      "**/node_modules/moralis/types",
+      "**/node_modules/web3/types/",
+      "**/node_modules/@rarible/types/",
+      "**/node_modules/@rarible/**/models/",
+      "**/node_modules/@rarible/sdk/build/"
+    ],
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
