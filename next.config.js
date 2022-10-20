@@ -23,11 +23,4 @@ const moduleExports = {
   },
 };
 
-const SentryWebpackPluginOptions = {};
-
-process.env.NODE_ENV === "production"
-  ? (module.exports = withSentryConfig(
-      moduleExports,
-      SentryWebpackPluginOptions
-    ))
-  : (module.exports = moduleExports);
+module.exports = moduleExports;
