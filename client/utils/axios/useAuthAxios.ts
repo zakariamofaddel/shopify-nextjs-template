@@ -24,7 +24,7 @@ export const useInitAuthAxios = () => {
 
       if (error.response.status === 403 && !originalRequest._retry) {
         const redirect = Redirect.create(app);
-        redirect.dispatch(Redirect.Action.APP, "/auth" || "/auth");
+        redirect.dispatch(Redirect.Action.APP, "/api/auth");
       }
       return Promise.reject(error);
     }

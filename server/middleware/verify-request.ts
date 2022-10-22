@@ -29,6 +29,13 @@ export default function verifyRequest(
     }
 
     if (session?.isActive()) {
+      const scopesChanged = !Shopify.Context.SCOPES.equals(session.scope);
+
+      if (scopesChanged) {
+        // The current session has the wrong scopes. Redirect gracefully to authenticate again.
+        return redirectToAuth(req, res, app);
+      }
+
       try {
         if (billing.required) {
           // The request to check billing status serves to validate that the access token is still valid.

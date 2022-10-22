@@ -8,11 +8,29 @@ import {
   Stack,
   TextContainer,
   Image,
+  Button,
 } from "@shopify/polaris";
+import { useAxios } from "../client/utils/axios/authAxiosContext";
 
 const Index = () => {
+  const axios = useAxios();
+
   return (
     <Page narrowWidth>
+      <Button
+        onClick={async () => {
+          //Change the scopes in your .env and click this button to trigger the verifyRequest middleware on the server, which will check if the scopes you stored in your sessionStorage are the same as the scopes you have in your .env, if not it will redirect to /exitiframe and ask the user to update the app.
+          //This is just a hack to test if /exitiframe works.
+
+          try {
+            await axios.get("/api/products/count");
+          } catch (error) {
+            console.log("error", error);
+          }
+        }}
+      >
+        Fetch data
+      </Button>
       <TitleBar title="App name" primaryAction={null} />
       <Layout>
         <Layout.Section>

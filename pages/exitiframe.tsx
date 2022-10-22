@@ -8,9 +8,8 @@ export default function ExitIframe() {
   const { query } = useRouter();
 
   useEffect(() => {
-    if (!!app && !!query) {
-      const params = new URLSearchParams(query as Record<string, string>);
-      const redirectUri = params.get("redirectUri");
+    if (!!app && !!query.redirectUri) {
+      const redirectUri = query.redirectUri as string;
       const url = new URL(decodeURIComponent(redirectUri));
 
       if (url.hostname === location.hostname) {

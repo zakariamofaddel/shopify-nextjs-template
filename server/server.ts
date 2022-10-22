@@ -144,7 +144,7 @@ nextApp.prepare().then(async () => {
   app.use(express.json());
 
   app.use((req, res, next) => {
-    const shop = Shopify.Utils.sanitizeShop(req.query.shop);
+    const shop = Shopify.Utils.sanitizeShop(req.query.shop as string);
     if (Shopify.Context.IS_EMBEDDED_APP && shop) {
       res.setHeader(
         "Content-Security-Policy",
@@ -204,7 +204,7 @@ nextApp.prepare().then(async () => {
   });
 
   // from here on we are sure that the shop is installed
-  app.get("/", async (req, res) => {
+  app.get("/*", async (req, res) => {
     return handle(req, res);
   });
 
