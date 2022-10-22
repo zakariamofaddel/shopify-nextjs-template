@@ -1,6 +1,6 @@
 ## v3 implementation
 
-If you are looking for a v3 implementation, switch branch to `v3`.
+If you are looking for a v3 implementation, switch branch to [v3](https://github.com/zakariamofaddel/shopify-nextjs-template/tree/v3).
 
 ## Requirements
 
