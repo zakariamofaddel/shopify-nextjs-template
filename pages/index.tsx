@@ -19,8 +19,10 @@ const Index = () => {
     <Page narrowWidth>
       <Button
         onClick={async () => {
-          //Change the scopes in your .env and click this button to trigger the verifyRequest middleware on the server, which will check if the scopes you stored in your sessionStorage are the same as the scopes you have in your .env, if not it will redirect to /exitiframe and ask the user to update the app.
-          //This is just a hack to test if /exitiframe works.
+          /*
+          Change the scopes in your .env and click this button to trigger the verifyRequest middleware on the server, which will check if the scopes you stored in your sessionStorage are the same as the scopes you have in your .env, if not it will redirect to /exitiframe and ask the user to update the app.
+          */
+          //! This is just a hack to test if /exitiframe works. You can remove this button once you are done testing.
 
           try {
             await axios.get("/api/products/count");
