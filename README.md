@@ -4,7 +4,7 @@ It seems like there is an issue (at least on windows) where after turning off th
 
 To solve I currently kill all node processes by running `taskkill /f /im node.exe` on windows.
 
-Not sure if the issue is related to my server implementation, the shopify CLI v3 or VSCode, I will look further and try to solve it.
+The issue is due to CLI V3 process handling and has been reported [here](https://github.com/Shopify/cli/issues/630)
 
 ## Requirements
 
