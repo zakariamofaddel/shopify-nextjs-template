@@ -8,11 +8,11 @@ import { useAppBridge } from "@shopify/app-bridge-react";
 import { AppProvider } from "@shopify/polaris";
 import "@shopify/polaris/build/esm/styles.css";
 import translations from "@shopify/polaris/locales/en.json";
-import { AppBridgeProvider } from "../client/components/providers/AppBridgeProvider";
-import RoutePropagator from "../client/components/RoutePropagator";
-import { useInitAuthAxios } from "../client/utils/axios/useAuthAxios";
-import { AxiosContextWrapper } from "../client/utils/axios/authAxiosContext";
-import { userLoggedInFetch } from "../client/utils/userLoggedInFetch";
+import { AppBridgeProvider } from "../frontend/components/providers/AppBridgeProvider";
+import RoutePropagator from "../frontend/components/RoutePropagator";
+import { useInitAuthAxios } from "../frontend/utils/axios/useAuthAxios";
+import { AxiosContextWrapper } from "../frontend/utils/axios/authAxiosContext";
+import { userLoggedInFetch } from "../frontend/utils/userLoggedInFetch";
 
 type ApolloProviderWithAuthProps = {
   children: React.ReactNode;
@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps, host }) {
   return (
     <>
       <AppProvider i18n={translations} theme={{ colorScheme: "light" }}>
-        <AppBridgeProvider host={host}>
+        <AppBridgeProvider incomingHost={host}>
           <RoutePropagator />
           <DataFetchingProvider Component={Component} {...pageProps} />
         </AppBridgeProvider>

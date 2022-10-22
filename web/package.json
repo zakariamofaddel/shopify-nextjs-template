@@ -1,0 +1,72 @@
+{
+  "name": "admin-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Next.js Shopify app with custom server",
+  "author": "Zakaria Mofaddel",
+  "scripts": {
+    "test": "jest",
+    "dev": "cross-env NODE_ENV=development ts-node --transpile-only ./server/index.ts",
+    "build": "yarn next build",
+    "start": "cross-env NODE_ENV=production ts-node --transpile-only ./server/index.ts"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shopify/shopify-app-node/issues"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.6",
+    "@babel/core": "7.12.10",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "@shopify/app-bridge": "^3.4.2",
+    "@shopify/app-bridge-react": "^3.4.2",
+    "@shopify/app-bridge-utils": "^3.4.2",
+    "@shopify/polaris": "^7.4.1",
+    "@shopify/polaris-icons": "^4.10.0",
+    "@shopify/shopify-api": "^5.2.0",
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.2",
+    "cookie-parser": "^1.4.6",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.2",
+    "graphql": "^16.1.0",
+    "isomorphic-fetch": "^3.0.0",
+    "next": "^12.3.1",
+    "next-env": "^1.1.0",
+    "node-fetch": "^2.6.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "webpack": "^4.44.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-stage-3": "^7.0.0",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.9",
+    "@types/react": "^17.0.37",
+    "babel-jest": "26.6.3",
+    "babel-register": "^6.26.0",
+    "eslint": "^8.4.1",
+    "husky": "^4.3.6",
+    "jest": "26.6.3",
+    "lint-staged": "^10.5.3",
+    "prettier": "2.2.1",
+    "ts-node": "^10.5.0",
+    "ts-node-dev": "^1.1.8",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write"
+    ]
+  }
+}

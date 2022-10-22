@@ -1,5 +1,5 @@
 import "@babel/polyfill";
-import Shopify, { ApiVersion, LATEST_API_VERSION } from "@shopify/shopify-api";
+import Shopify, { LATEST_API_VERSION } from "@shopify/shopify-api";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import express from "express";
@@ -60,9 +60,7 @@ const BILLING_SETTINGS = {
   // currencyCode: "USD",
   // interval: BillingInterval.OneTime,
 };
-const root = process.cwd(),
-  isProd = process.env.NODE_ENV === "production",
-  billingSettings = BILLING_SETTINGS;
+const billingSettings = BILLING_SETTINGS;
 
 // This sets up the mandatory GDPR webhooks. You’ll need to fill in the endpoint
 // in the “GDPR mandatory webhooks” section in the “App setup” tab, and customize
@@ -211,4 +209,10 @@ nextApp.prepare().then(async () => {
   app.listen(port, () => {
     console.log(`🚀 Server ready on http://localhost:${port}`);
   });
+});
+
+process.on("SIGINT", function () {
+  console.log("\nGracefully shutting down from SIGINT (Ctrl-C)");
+  // some other closing procedures go here
+  process.exit(0);
 });

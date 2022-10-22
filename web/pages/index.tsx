@@ -10,7 +10,7 @@ import {
   Image,
   Button,
 } from "@shopify/polaris";
-import { useAxios } from "../client/utils/axios/authAxiosContext";
+import { useAxios } from "../frontend/utils/axios/authAxiosContext";
 
 const Index = () => {
   const axios = useAxios();

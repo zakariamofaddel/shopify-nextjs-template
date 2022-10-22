@@ -1,0 +1,3 @@
+name = "nextjs-shopify-v3"
+scopes = "read_products,write_customers,write_orders,write_products"
+extension_directories = ["extensions/*"]
