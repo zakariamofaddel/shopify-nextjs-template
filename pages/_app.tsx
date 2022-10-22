@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps, host }) {
   return (
     <>
       <AppProvider i18n={translations} theme={{ colorScheme: "light" }}>
-        <AppBridgeProvider host={host}>
+        <AppBridgeProvider incomingHost={host}>
           <RoutePropagator />
           <DataFetchingProvider Component={Component} {...pageProps} />
         </AppBridgeProvider>
