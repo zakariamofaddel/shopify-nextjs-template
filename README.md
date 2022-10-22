@@ -1,3 +1,7 @@
+## v3 implementation
+
+If you are looking for a v3 implementation, switch branch to `v3`.
+
 ## Requirements
 
 - If you don’t have one, [create a Shopify partner account](https://partners.shopify.com/signup).
