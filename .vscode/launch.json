@@ -1,0 +1,23 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug Development",
+			"type": "node",
+			"request": "launch",
+			"args": [
+				"${workspaceRoot}\\server\\server.ts"
+			],
+			"runtimeArgs": [
+				"-r",
+				"ts-node/register/transpile-only"
+			],
+			"cwd": "${workspaceRoot}",
+			"protocol": "inspector",
+			"internalConsoleOptions": "openOnSessionStart",
+			"env": {
+				"NODE_ENV": "development"
+			}
+		}
+	]
+}
