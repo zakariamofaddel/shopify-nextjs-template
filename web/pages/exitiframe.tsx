@@ -8,7 +8,7 @@ export default function ExitIframe() {
   const { query } = useRouter();
 
   useEffect(() => {
-    if (!!app && !!query.redirectUri) {
+    if (Boolean(app) && Boolean(query.redirectUri)) {
       const redirectUri = query.redirectUri as string;
       const url = new URL(decodeURIComponent(redirectUri));
 
